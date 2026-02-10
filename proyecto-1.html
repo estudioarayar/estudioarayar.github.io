@@ -56,7 +56,7 @@
         .gallery-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.4,0,0.2,1); display: block; }
         .gallery-img-wrapper:hover img { transform: scale(1.04); }
         .img-caption { margin-top: 0.6rem; font-size: 0.75rem; color: var(--color-muted); letter-spacing: 0.05em; }
-        .gallery-secondary-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem; }
+        .gallery-triple-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
         .project-nav { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--color-line); margin-top: clamp(3rem,6vw,6rem); }
         .project-nav-item { padding: 2.5rem 0; transition: color 0.2s; }
         .project-nav-item:last-child { border-left: 1px solid var(--color-line); padding-left: 2.5rem; }
@@ -73,7 +73,7 @@
         }
         @media (max-width: 600px) {
             .project-hero { height: 60vh; }
-            .gallery-secondary-row { grid-template-columns: 1fr; }
+            .gallery-triple-row { grid-template-columns: 1fr !important; }
             .project-nav { grid-template-columns: 1fr; }
             .project-nav-item:last-child { border-left: none; border-top: 1px solid var(--color-line); padding-left: 0; }
         }
@@ -87,11 +87,15 @@
             <span>Volver</span>
         </a>
     </header>
+
     <section class="project-hero">
-        <img src="images/int cocina valpo.jpg" alt="interior">
+        <img src="images/int cocina valpo.jpg" alt="INDH Sede Valparaíso">
         <div class="project-number">01</div>
     </section>
+
     <main class="project-body">
+
+        <!-- Título + Ficha técnica -->
         <div class="project-top reveal">
             <div class="project-title-block">
                 <div class="project-index">Proyecto</div>
@@ -100,43 +104,55 @@
             </div>
             <div class="project-specs">
                 <div class="spec-item"><div class="spec-label">Año</div><div class="spec-value">2023</div></div>
-                <div class="spec-item"><div class="spec-label">Superficie</div><div class="spec-value">185m²</div></div>
+                <div class="spec-item"><div class="spec-label">Superficie</div><div class="spec-value">185 m²</div></div>
                 <div class="spec-item"><div class="spec-label">Ubicación</div><div class="spec-value">Valparaíso, Chile</div></div>
                 <div class="spec-item"><div class="spec-label">Estado</div><div class="spec-value">Ejecutado</div></div>
                 <div class="spec-item"><div class="spec-label">Mandante</div><div class="spec-value">Instituto Nacional de Derechos Humanos</div></div>
             </div>
         </div>
+
+        <!-- Descripción -->
         <div class="project-description reveal">
             <div class="description-label">Descripción</div>
             <p class="description-text">La sede de Valparaíso del INDH nos presentó el desafío de maximizar la luminosidad en todos los recintos, poniendo en valor las zonas de convivencia de la oficina. Esto se logró a partir de la completa reconfiguración del espacio, dejando una circulación perimetral y generando un núcleo permeable a la luz natural, donde las divisiones de vidrio tintado permiten la privacidad adecuada y un ambiente grato, cálido y luminoso en sectores interiores del recinto.</p>
         </div>
+
+        <!-- Galería -->
         <div class="project-gallery reveal">
             <div class="gallery-label">Imágenes</div>
-            <div class="gallery-img-wrapper" style="aspect-ratio:2/3;">
-                <img src="images/valpopasillorecepcion.jpg" alt="INDH Sede Valparaíso — Vista general">
-            </div>
-            <p class="img-caption">Vista general</p>
-            <div class="gallery-secondary-row">
+
+            <!-- Tres imágenes 2/3 lado a lado -->
+            <div class="gallery-triple-row">
                 <div>
                     <div class="gallery-img-wrapper" style="aspect-ratio:2/3;">
-                        <img src="images/valpopasillos.jpg" alt="INDH Sede Valparaíso — Detalle 1">
+                        <img src="images/valpopasillorecepcion.jpg" alt="Recepción">
+                    </div>
+                    <p class="img-caption">Recepción</p>
+                </div>
+                <div>
+                    <div class="gallery-img-wrapper" style="aspect-ratio:2/3;">
+                        <img src="images/valpopasillos.jpg" alt="Pasillos">
                     </div>
                     <p class="img-caption"></p>
                 </div>
                 <div>
                     <div class="gallery-img-wrapper" style="aspect-ratio:2/3;">
-                        <img src="images/valpooficinascielonuevo.jpg" alt="INDH Sede Valparaíso — Detalle 2">
+                        <img src="images/valpooficinascielonuevo.jpg" alt="Oficinas">
                     </div>
                     <p class="img-caption"></p>
                 </div>
             </div>
+
+            <!-- Imagen 4/3 abajo -->
             <div style="margin-top:1.5rem;">
                 <div class="gallery-img-wrapper" style="aspect-ratio:4/3;">
-                    <img src="images/puertabaño.jpg" alt="INDH Sede Valparaíso — Vista panorámica">
+                    <img src="images/puertabaño.jpg" alt="Detalle">
                 </div>
                 <p class="img-caption"></p>
             </div>
         </div>
+
+        <!-- Navegación entre proyectos -->
         <nav class="project-nav reveal">
             <a class="project-nav-item" href="proyecto-8.html">
                 <div class="nav-direction">← Anterior</div>
@@ -147,7 +163,9 @@
                 <div class="nav-project-name">Ampliación INDH</div>
             </a>
         </nav>
+
     </main>
+
     <script>
         const reveals = document.querySelectorAll('.reveal');
         const observer = new IntersectionObserver((entries) => {
