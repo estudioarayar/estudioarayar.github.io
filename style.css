@@ -337,6 +337,38 @@ a {
     position: relative;
 }
 
+/* ============================================
+   Skeleton Loader para imágenes
+   ============================================ */
+.project-image {
+    position: relative;
+    background: linear-gradient(
+        90deg,
+        #1a1a1a 0%,
+        #2a2a2a 50%,
+        #1a1a1a 100%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.project-image img {
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+}
+
+.project-image img.loaded {
+    opacity: 1;
+}
 .project-image {
     width: 100%;
     height: 100%;
