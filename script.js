@@ -196,3 +196,28 @@ document.addEventListener('keydown', function(e) {
 // ============================================
 console.log('%c OFICINA ANR ', 'background: #FF3D00; color: #0D0D0D; font-size: 20px; font-weight: bold; padding: 10px;');
 console.log('%c Interesado en el código? Visita nuestro GitHub ', 'font-size: 12px; color: #A0A0A0;');
+
+// ============================================
+// Skeleton Loader - Lazy Loading de Imágenes
+// ============================================
+document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('.project-image img');
+    
+    images.forEach(img => {
+        // Si la imagen ya cargó
+        if (img.complete) {
+            img.classList.add('loaded');
+        } else {
+            // Cuando la imagen termine de cargar
+            img.addEventListener('load', function() {
+                img.classList.add('loaded');
+            });
+            
+            // Si hay error al cargar
+            img.addEventListener('error', function() {
+                img.classList.add('loaded');
+                console.log('Error cargando imagen:', img.src);
+            });
+        }
+    });
+});
