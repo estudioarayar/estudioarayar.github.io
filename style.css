@@ -1085,15 +1085,15 @@ a {
 }
 
 .rec-tag--comercial {
-    background: rgba(160, 160, 160, 0.1);
-    color: var(--color-text-muted);
-    border: 1px solid rgba(160, 160, 160, 0.2);
+    background: rgba(255, 61, 0, 0.12);
+    color: var(--color-accent);
+    border: 1px solid rgba(255, 61, 0, 0.25);
 }
 
 .rec-tag--arq {
-    background: rgba(160, 160, 160, 0.1);
-    color: var(--color-text-muted);
-    border: 1px solid rgba(160, 160, 160, 0.2);
+    background: rgba(255, 61, 0, 0.12);
+    color: var(--color-accent);
+    border: 1px solid rgba(255, 61, 0, 0.25);
 }
 
 .rec-free {
